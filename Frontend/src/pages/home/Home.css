@@ -1,0 +1,93 @@
+.HomeContainer {
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px; /*remove this line*/
+}
+
+.BackToHome {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    border-radius: 50px;
+    padding: 3px 14px;  
+    border: 1px solid black;
+    box-shadow: 0.75px 1.5px 6px -3px black;
+}
+
+.IntroContainer {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 25px;
+}
+
+.CreateNewProjectButton {
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    column-gap: 12px;
+    padding: 10px 20px;
+
+    p {
+        font-size: 17px;
+        color: #F8F8F8;
+    }
+}
+
+.CancleProjectCreate:focus {
+    outline: none;
+}
+
+.ProjectsNavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Projects {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+}
+
+.Project {
+    display: flex;
+    column-gap: 15px;
+    border: 1px solid #646464;
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 0px 2px 7px -4px black;
+}
+
+.ProjectName {
+    height: fit-content;
+    color: white;
+    font-weight: 600;
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.ProjectInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding-right: 30px; */
+}
+
+.ProjectDetails {
+    padding: 14px 0px;
+}
