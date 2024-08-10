@@ -62,10 +62,6 @@ export default function Home(params) {
         return colors[randomIndex];
     }
 
-    const projectPageAPICall = (projectID) => {
-        navigate(`/project/${projectID}/projects`)
-    }
-
     const projectModal = () => {
         const isCookieExist = GetCookie();
         if (isCookieExist) {
