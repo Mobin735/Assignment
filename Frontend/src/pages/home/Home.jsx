@@ -15,9 +15,9 @@ export default function Home(params) {
 
     useEffect(() => {
         const isCookieExist = GetCookie();
+        setLoaderToggle(true);
         if (isCookieExist) {
             const getUserData = async () => {
-                setLoaderToggle(true);
                 const result = await axios.get(`${import.meta.env.VITE_APP_API}/api/user`, {
                     headers: {
                         token: isCookieExist
@@ -26,13 +26,13 @@ export default function Home(params) {
                 result.data.userData && setProjects(result.data.userData.projects);
             }
             getUserData();
-            setLoaderToggle(false);
         }
         else {
             var loginModal = document.getElementById('LoginModal');
             var myModal = new bootstrap.Modal(loginModal);
             myModal.show();
         }
+        setLoaderToggle(false);
     }, [])
 
     const userLogin = async () => {
