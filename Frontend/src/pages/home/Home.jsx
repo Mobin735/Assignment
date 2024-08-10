@@ -102,7 +102,7 @@ export default function Home(params) {
         const diffInSeconds = Math.floor((now - date) / 1000);
         const diffInHours = Math.floor(diffInSeconds / 3600);
         const diffInDays = Math.floor(diffInSeconds / 86400);
-    
+        
         if (diffInDays > 7) {
             return 'Last edited a week ago';
         } else if (diffInDays >= 1) {

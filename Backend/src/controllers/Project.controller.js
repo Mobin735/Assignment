@@ -39,6 +39,7 @@ export const createProject = async (req, res) => {
             email: result.email,
             username: result.username,
             projects: result.projects.map(project => ({
+                projectEdit: Date.now(),
                 projectID: project._id,
                 projectname: project.projectname,
                 files: project.files.length
