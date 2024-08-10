@@ -106,9 +106,9 @@ export default function Home(params) {
         if (diffInDays > 7) {
             return 'Last edited a week ago';
         } else if (diffInDays >= 1) {
-            return `Last edited ${diffInDays == 0 ? "a" : diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
+            return `Last edited ${diffInDays <= 0 ? "a" : diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
         } else {
-            return `Last edited ${diffInHours == 0 ? "an" : diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
+            return `Last edited ${diffInHours <= 0 ? "an" : diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
         }
     };
 
