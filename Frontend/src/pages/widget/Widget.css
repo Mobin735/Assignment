@@ -1,0 +1,48 @@
+.WidgetContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.WidgetSubContainer {
+    width: calc(100% - 20rem);
+    padding: 35px;
+}
+
+.WidgetBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 3px solid #DADADA;
+    column-gap: 20px;
+    margin-bottom: 35px;
+
+    p {
+        cursor: pointer;
+        user-select: none;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 0 8px;
+        padding-bottom: 5px;
+        color: var(--textColor);
+
+        position: relative;
+    }
+}
+
+.activeWidget {
+    color: var(--primaryColor) !important;
+}
+
+.activeWidget::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--primaryColor);
+    border-radius: 6px;
+    z-index: 1;
+    margin-bottom: -4px;
+}

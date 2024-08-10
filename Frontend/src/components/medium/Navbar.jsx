@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Navlogo from "../small/NavLogo"
 import { NavLink } from "react-router-dom"
+import { useMemo } from "react"
 
 const NavContainer = styled.div`
     display: flex;
@@ -21,7 +22,7 @@ const NavButtons = styled.div`
     column-gap: 8px;
 `
 
-export default function Navbar(params) {
+function NavbarFunction() {
     return (
         <NavContainer>
             <NavLink to='/'><Navlogo font_size="25px" logo_size="40"/></NavLink>
@@ -35,4 +36,10 @@ export default function Navbar(params) {
             </NavButtons>
         </NavContainer>
     )
-};
+}
+
+const Navbar = () => {
+    return useMemo(() => <NavbarFunction />)
+}
+
+export default Navbar;

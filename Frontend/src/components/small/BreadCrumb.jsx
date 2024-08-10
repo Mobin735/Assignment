@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import languageIMG from "../../assets/language.png";
+import { useMemo } from "react";
 
 const BreadCrumbContainer = styled.div`
     display: flex;
@@ -36,7 +37,7 @@ const BreadCrumbRight = styled.div`
     }
 `
 
-export default function BreadCrumb({current_location, project_name}) {
+function BreadCrumbFunction({current_location, project_name}) {
     const projectname = project_name;
     const location = current_location;
     return (
@@ -64,4 +65,10 @@ export default function BreadCrumb({current_location, project_name}) {
             </BreadCrumbRight>
         </BreadCrumbContainer>
     )
-};
+}
+
+const BreadCrumb = ({current_location, project_name}) => {
+    return useMemo(() => <BreadCrumbFunction current_location={current_location} project_name={project_name}/>)
+}
+
+export default BreadCrumb;

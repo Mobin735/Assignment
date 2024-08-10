@@ -1,0 +1,32 @@
+.GeneralContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.GCFields {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 20px;
+        color: #3C3C3C;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+
+    input {
+        border: 1px solid #999999;
+        border-radius: 8px;
+        outline: none;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    small {
+        padding-top: 3px;
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+    }
+}

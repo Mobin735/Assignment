@@ -1,0 +1,59 @@
+.SettingsContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.SettingsSubContainer {
+    width: calc(100% - 20rem);
+    padding: 35px;
+}
+
+.ProfileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    cursor: pointer;
+
+    input {
+        width: 100%;
+        padding: 6px 10px;
+        border: 1px solid #999999;
+        border-radius: 7px;
+        font-size: 20px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    div {
+        width: 50%;
+    }
+}
+
+.Subscription {
+    display: flex;
+    background-image: linear-gradient(to right, var(--primaryColor), #460281);
+    padding: 18px 45px;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p {
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    button {
+        border: none;
+        background: white;
+        border-radius: 4px;
+        font-size: 18px;
+        padding: 10px 25px;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        color: var(--primaryColor);
+        box-shadow: 1px 1px 8px -3px black;
+    }
+}

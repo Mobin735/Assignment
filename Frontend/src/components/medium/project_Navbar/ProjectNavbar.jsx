@@ -1,22 +1,22 @@
-import { NavLink, useLocation, useSearchParams } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Navlogo from "../../small/NavLogo";
 import "./ProjectNavbar.css";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 
-export default function ProjectNavbar(params) {
+function ProjectNavbarFunction() {
     const location = useLocation();
     const [projectID, setProjectID] = useState('');
-
+    
     useLayoutEffect(() => {
         const pathSegments = location.pathname.split('/');
         const secondLastSegment = pathSegments[pathSegments.length - 2];
         setProjectID(secondLastSegment)
     }, [location]);
-
+    
     return (
         <div className="ProjectNavbarContainer">
             <div className="ProjectNavbarContainerUpper">
-                <Navlogo font_size="25px" logo_size="40" />
+                <NavLink style={{textDecoration: "none"}} to='/'><Navlogo font_size="25px" logo_size="40"/></NavLink>
                 <p style={{ color: "var(--textColor)", fontWeight: "500", fontSize: "13px" }}>Podcast Upload Flow</p>
                 <div className="ProjectNavbarMenu">
                     <NavLink to={`/project/${projectID}/projects`} className="PNBMContainer">
@@ -41,4 +41,10 @@ export default function ProjectNavbar(params) {
             </div>
         </div>
     )
-};
+}
+
+const ProjectNavbar = () => {
+    return useMemo(() => <ProjectNavbarFunction />)
+}
+
+export default ProjectNavbar;
