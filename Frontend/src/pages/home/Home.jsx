@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '../../components/medium/Navbar';
 import IntroSvg from '../../assets/IntroImage.svg';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GetCookie from '../../utils/GetCookie';
 import axios from 'axios';
 import Loader from '../../components/small/Loader';
@@ -189,7 +189,7 @@ export default function Home(params) {
                                 <div className='Projects'>
                                     {
                                         projects.map(project => (
-                                            <div className='Project' key={project.projectID} onClick={() => projectPageAPICall(project.projectID)}>
+                                            <Link to={`/project/${project.projectID}/projects`} style={{textDecoration: "none", color: "black"}} className='Project' key={project.projectID}>
                                                 <p className='ProjectName' style={{ background: getBackgroundColor() }}>{getName(project.projectname)}</p>
                                                 <div className='ProjectInfo'>
                                                     <div className='ProjectDetails'>
@@ -198,7 +198,7 @@ export default function Home(params) {
                                                     </div>
                                                     <p style={{ fontSize: "12px", color: "#898989" }}>{formatTimeAgo(project.projectEdit)}</p>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         ))
                                     }
                                 </div>
