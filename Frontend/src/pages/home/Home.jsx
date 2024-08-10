@@ -8,22 +8,22 @@ import axios from 'axios';
 import Loader from '../../components/small/Loader';
 
 export default function Home(params) {
-    const [projectNameInput, setProjectNameInput] = useState('');
     const [projects, setProjects] = useState([]);
     const [loaderToggle, setLoaderToggle] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         const isCookieExist = GetCookie();
-        setLoaderToggle(true);
         if (isCookieExist) {
             const getUserData = async () => {
+                setLoaderToggle(true);
                 const result = await axios.get(`${import.meta.env.VITE_APP_API}/api/user`, {
                     headers: {
                         token: isCookieExist
                     }
                 });
                 result.data.userData && setProjects(result.data.userData.projects);
+                setLoaderToggle(false);
             }
             getUserData();
         }
@@ -32,7 +32,6 @@ export default function Home(params) {
             var myModal = new bootstrap.Modal(loginModal);
             myModal.show();
         }
-        setLoaderToggle(false);
     }, [])
 
     const userLogin = async () => {
@@ -94,7 +93,6 @@ export default function Home(params) {
         });
         result.data.updatedUser && setProjects(result.data.updatedUser.projects);
         document.getElementById('projectName').value = '';
-        setProjectNameInput('');
         setLoaderToggle(false);
     }
 
