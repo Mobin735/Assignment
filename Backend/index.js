@@ -8,7 +8,7 @@ import Project from "./src/routes/Project.js";
 import File from "./src/routes/File.js";
 import Widget from "./src/routes/Widget.js";
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['http://localhost:5173', 'https://podcast-mobin.vercel.app'];
 
 const corsOptions = {
     origin: allowedOrigins,
